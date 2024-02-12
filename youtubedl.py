@@ -1,10 +1,7 @@
-# FREE PUNJABI VDEO DOWNLOADER NO VIRUS
+# FREE VIDEO DOWNLOADER NO VIRUS
 # START DAY 1/30/2024
 # --------------------------------------------
-# TODO: priority order
-# audio downloader DONE
-# goof way to bundle ffmpeg
-# switch formats
+# switch formats?
 # size of pyinstaller .exe (not much i can do)
 # progress bar
 # playlists
@@ -12,9 +9,6 @@
 from os import path, walk
 from yt_dlp import YoutubeDL, utils
 import PySimpleGUI as sg
-# from dataclasses import dataclass
-# from datetime import timedelta
-# from typing import Optional
 
 
 def find_files(filename, search_path):
@@ -50,41 +44,7 @@ class MyLogger:
 
     def error(self, msg):
         print(msg)
-
-
-# @dataclass
-# class YTProgress:
-#     """
-#     The youtube_dl progress hook's information dictionary is weakly-typed. This
-#     represents it as a convenience dataclass.
-#     """
-#
-#     status: str
-#     total_bytes: int
-#     filename: str
-#     downloaded_bytes: Optional[int] = None
-#     elapsed: Optional[float] = None
-#     tmpfilename: Optional[str] = None
-#     eta: Optional[int] = None
-#     speed: Optional[float] = None
-#
-#     @property
-#     def is_finished(self) -> bool:
-#         return self.status == 'finished'
-#
-#     @property
-#     def elapsed_delta(self) -> timedelta:
-#         return timedelta(seconds=round(self.elapsed))
-#
-#     @property
-#     def eta_delta(self) -> timedelta:
-#         return self.elapsed_delta + timedelta(seconds=self.eta)
-#
-#     def __str__(self):
-#         if self.is_finished:
-#             # Many of the members will be None if we're finished, so just
-#             # return the status.
-#             return self.status
+        
 
 
 vid_opt = {
@@ -102,7 +62,6 @@ aud_opt = {
     }]
 }
 sg.theme('DarkAmber')   # Add a touch of color
-# All the stuff inside your window.
 layout = [  [sg.Text('Rohans Super awesome video downloader')],
             [sg.Text('Youtube URL'), sg.InputText()],
             [sg.Button('Video'), sg.Button('Audio'), sg.Button('Cancel')] ]
