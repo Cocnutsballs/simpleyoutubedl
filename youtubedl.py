@@ -20,7 +20,7 @@ def find_files(filename, search_path):
             result.append(path.join(root, filename))
         return result
 
-
+# Getting ffmpeg
 prog_loc = path.dirname(path.abspath(__file__))
 ffm_loc = find_files('ffmpeg.exe', prog_loc)
 print(ffm_loc)
@@ -59,6 +59,7 @@ aud_opt = {
     'postprocessors': [{  # Extract audio using ffmpeg
         'key': 'FFmpegExtractAudio',
         'preferredcodec': 'mp3',
+        'preferredquality': '227'
     }]
 }
 sg.theme('DarkAmber')   # Add a touch of color
